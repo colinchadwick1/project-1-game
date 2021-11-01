@@ -6,13 +6,13 @@ class Obstacle {
       this.color = "white";
       this.speed = speed;
       this.size = 30;
-      this.radius = 100
     }
   
     draw() {
       // We will first draw squares
       this.ctx.fillStyle = this.color;
       this.ctx.fillRect(this.x, this.y, this.size, this.size);
+      
       
     }
   

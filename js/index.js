@@ -8,11 +8,13 @@ const buildDom = (html) => {
     buildDom(`
     <img src="" alt="" style="width:50%;" />
     <br />
+    <img src="/images/start-ball.png" alt="world-cup-ball" id="start-ball"/>
     <button id="start-button">Start Game</button>
     `);
     const startButton = document.getElementById("start-button");
+    const startImage = document.getElementById("start-ball");
     startButton.addEventListener("click", buildGameScreen);
-    startButton.addEventListener("keypress", buildGameScreen);
+    startImage.addEventListener("click", buildGameScreen);
 
 
   };

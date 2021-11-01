@@ -20,9 +20,9 @@ class Game {
 
     // Add event listener for moving the player
     this.handleKeyDown = (event) => {
-      if (event.code === "ArrowUp") {
+      if (event.code === "ArrowRight") {
         this.player.setDirection("up");
-      } else if (event.code === "ArrowDown") {
+      } else if (event.code === "ArrowLeft") {
         this.player.setDirection("down");
       }
     };
