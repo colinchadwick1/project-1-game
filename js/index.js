@@ -22,7 +22,7 @@ const buildDom = (html) => {
   // Second Screen => Game Screen
   const buildGameScreen = () => {
     buildDom(`
-    <h3 class="score">Score: 0</h3>
+    <h3 class="score">Score: <span id="score-span">0</span></h3>
     <h3> lives 5</h3>
     <div id="game-board">
     <canvas id="canvas" width="900" height="500" style="background: url('/images/goal.jpeg')"></canvas>

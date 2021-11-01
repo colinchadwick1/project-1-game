@@ -14,18 +14,18 @@ class Player {
     this.x = 50;
     this.y = canvas.height / 2;
     this.direction = 0;
-    this.speed = 1;
+    this.speed = 15;
   }
 
   update() {
-    this.x = this.x + this.direction * this.speed;
+    this.x = this.x + this.speed;
     this.checkScreen();
   }
 
   setDirection(direction) {
     // +1 down  -1 up
-    if (direction === "left") this.direction = -5;
-    else if (direction === "right") this.direction = 5;
+    if (direction === "left") this.direction = -1;
+    else if (direction === "right") this.direction = 1;
   }
 
   // Check if the player is out of the screen / canvas

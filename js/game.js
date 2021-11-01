@@ -21,11 +21,15 @@ class Game {
     // Add event listener for moving the player
     this.handleKeyDown = (event) => {
       if (event.code === "ArrowLeft") {
-        this.player.setDirection("left");
+        this.player.x -= this.player.speed;
       } else if (event.code === "ArrowRight") {
-        this.player.setDirection("right");
-      }
-    };
+        this.player.x += this.player.speed;
+      }else if (event.code === "ArrowUp") {
+        this.player.y -= this.player.speed;
+    }else if (event.code === "ArrowDown") {
+      this.player.y += this.player.speed; 
+    }
+  }
 
     // Any function provided to eventListener
     document.body.addEventListener("keydown", this.handleKeyDown);
@@ -44,7 +48,7 @@ class Game {
       }
 
       // 1. UPDATE THE STATE OF PLAYER AND WE MOVE THE OBSTACLES
-      this.player.update();
+      //this.player.update();
       this.obstacles.forEach((obstacle) => {
         obstacle.move();
       });
@@ -81,6 +85,7 @@ class Game {
     this.obstacles.forEach((obstacle) => {
       if (this.player.didCollide(obstacle)) {
        this.score += 1
+       document.querySelector("#score-span").innerHTML = this.score
        console.log(this.score)
       }
     });
