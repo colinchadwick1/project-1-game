@@ -80,7 +80,7 @@ class Game {
   checkCollisions() {
     this.obstacles.forEach((obstacle) => {
       if (this.player.didCollide(obstacle)) {
-       this.score++;
+       this.score += 1
        console.log(this.score)
       }
     });

@@ -12,6 +12,9 @@ const buildDom = (html) => {
     `);
     const startButton = document.getElementById("start-button");
     startButton.addEventListener("click", buildGameScreen);
+    startButton.addEventListener("keypress", buildGameScreen);
+
+
   };
   
   // Second Screen => Game Screen
@@ -20,7 +23,7 @@ const buildDom = (html) => {
     <h3 class="score">Score: 0</h3>
     <h3> lives 5</h3>
     <div id="game-board">
-    <canvas id="canvas" width="800" height="500"></canvas>
+    <canvas id="canvas" width="800" height="500" style="background: url('/images/goal.jpeg')"></canvas>
     </div>  
     <button id="end-button">End Game</button>
     `);

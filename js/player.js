@@ -14,7 +14,7 @@ class Player {
   }
 
   update() {
-    this.y = this.y + this.direction * this.speed;
+    this.x = this.x + this.direction * this.speed;
     this.checkScreen();
   }
 
@@ -26,15 +26,15 @@ class Player {
 
   // Check if the player is out of the screen / canvas
   checkScreen() {
-    if (this.y + this.size - this.size <= 0) {
+    if (this.x + this.size - this.size <= 0) {
       this.direction = 1;
-    } else if (this.y + this.size >= 500) {
+    } else if (this.x + this.size >= 500) {
       this.direction = -1;
     }
   }
 
   draw() {
-    this.ctx.fillStyle = "black";
+    this.ctx.fillStyle = "white";
     // fillRect(x, y, width, height)
     this.ctx.fillRect(this.x, this.y, this.size, this.size);
   }
