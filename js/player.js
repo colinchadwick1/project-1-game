@@ -28,7 +28,7 @@ class Player {
   checkScreen() {
     if (this.x + this.size - this.size <= 0) {
       this.direction = 1;
-    } else if (this.x + this.size >= 500) {
+    } else if (this.x + this.size >= 800) {
       this.direction = -1;
     }
   }
