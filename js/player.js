@@ -1,12 +1,16 @@
 "use strict";
 
+const gloves = new Image ();
+gloves.src = "/images/gloves.png"
+
+
 class Player {
   constructor(canvas, lives) {
     this.canvas = canvas;
     this.ctx = this.canvas.getContext("2d");
     this.canvasHeight = 500;
     this.lives = lives;
-    this.size = 50;
+    this.size = 100;
     this.x = 50;
     this.y = canvas.height / 2;
     this.direction = 0;
@@ -20,13 +24,13 @@ class Player {
 
   setDirection(direction) {
     // +1 down  -1 up
-    if (direction === "up") this.direction = -5;
-    else if (direction === "down") this.direction = 5;
+    if (direction === "left") this.direction = -5;
+    else if (direction === "right") this.direction = 5;
   }
 
   // Check if the player is out of the screen / canvas
   checkScreen() {
-    if (this.x + this.size - this.size <= 0) {
+    if (this.x + this.size - this.size <= 140) {
       this.direction = 1;
     } else if (this.x + this.size >= 800) {
       this.direction = -1;
@@ -36,7 +40,10 @@ class Player {
   draw() {
     this.ctx.fillStyle = "white";
     // fillRect(x, y, width, height)
-    this.ctx.fillRect(this.x, this.y, this.size, this.size);
+    this.ctx.drawImage(gloves, this.x, this.y, this.size, this.size )
+    
+
+
   }
 
   didCollide(obstacle) {

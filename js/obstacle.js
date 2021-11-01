@@ -1,3 +1,8 @@
+
+    const ball = new Image ();
+    ball.src = "/images/soccer.png"
+
+
 class Obstacle {
     constructor(ctx, x, y, speed) {
       this.ctx = ctx;
@@ -6,13 +11,17 @@ class Obstacle {
       this.color = "white";
       this.speed = speed;
       this.size = 30;
+
     }
+
+
+    
   
     draw() {
       // We will first draw squares
       this.ctx.fillStyle = this.color;
-      this.ctx.fillRect(this.x, this.y, this.size, this.size);
-      
+      this.ctx.drawImage(ball, this.x, this.y, this.size, this.size )
+    
       
     }
   
