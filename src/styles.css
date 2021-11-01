@@ -1,4 +1,7 @@
-#canvas {
-    background-image: url(/goal.jpeg);
-}
 
+
+.goalies {
+    margin: auto;
+    width: 60%;
+    padding: 10px;
+    }
