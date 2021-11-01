@@ -31,9 +31,26 @@ class Game {
     }else if (event.code === "ArrowDown" && event.code === "ArrowLeft") {
       this.player.y += this.player.speed; 
       this.player.x -= this.player.speed;
+    } else if (event.code === "ArrowDown" && event.code === "ArrowRight") {
+      this.player.y += this.player.speed; 
+      this.player.x += this.player.speed;
+  } else if (event.code === "ArrowUp" && event.code === "ArrowLeft") {
+    this.player.y -= this.player.speed;
+    this.player.x -= this.player.speed;
+  }else if (event.code === "ArrowUp" && event.code === "ArrowRight") {
+    this.player.y -= this.player.speed;
+    this.player.x += this.player.speed;
+  }
 
     }
-  }
+
+   
+
+   
+	
+
+
+
 
     // Any function provided to eventListener
     document.body.addEventListener("keydown", this.handleKeyDown);

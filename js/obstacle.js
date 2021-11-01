@@ -3,16 +3,21 @@
     ball.src = "/images/soccer.png"
 
 
+
+
+
+
 class Obstacle {
     constructor(ctx, x, y, speed) {
       this.ctx = ctx;
-      this.x = x;
-      this.y = y;
+      this.x = canvas.width / 2;
+      this.y = canvas.height;
       this.color = "white";
       this.speed = speed;
       this.size = 30;
 
     }
+
 
 
     
@@ -24,8 +29,11 @@ class Obstacle {
     
       
     }
-  
+
     move() {
-      this.x += this.speed * -6;
+   
+
+      this.y += this.speed * -6;
+      
     }
   }
