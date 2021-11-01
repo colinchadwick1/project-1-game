@@ -14,7 +14,7 @@ class Player {
     this.x = 50;
     this.y = canvas.height / 2;
     this.direction = 0;
-    this.speed = 15;
+    this.speed = 25;
   }
 
   update() {

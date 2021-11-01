@@ -28,6 +28,10 @@ class Game {
         this.player.y -= this.player.speed;
     }else if (event.code === "ArrowDown") {
       this.player.y += this.player.speed; 
+    }else if (event.code === "ArrowDown" && event.code === "ArrowLeft") {
+      this.player.y += this.player.speed; 
+      this.player.x -= this.player.speed;
+
     }
   }
 
@@ -82,12 +86,14 @@ class Game {
   }
 
   checkCollisions() {
-    this.obstacles.forEach((obstacle) => {
+    this.obstacles.forEach((obstacle, index) => {
       if (this.player.didCollide(obstacle)) {
        this.score += 1
        document.querySelector("#score-span").innerHTML = this.score
        console.log(this.score)
+       this.obstacles.splice(index, 1)
       }
+      
     });
   }
 }
