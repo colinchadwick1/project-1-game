@@ -8,6 +8,7 @@ class Game {
     this.gameIsOver = false;
     this.score = 0;
     this.lives = 4;
+    this.highScore = [];
   }
 
   start() {
@@ -59,12 +60,54 @@ class Game {
   startLoop() {
     const loop = () => {
       // We create the obstacles with random y
-      if (Math.random() > 0.99) {
-        const y = Math.random() * this.canvas.height;
-        const x = this.canvas.width - 20;
-        let randomX = Math.random() * (5 - -5) + -5;
+      if (this.score < 10) {
+        if (Math.random() > 0.97) {
+          const y = Math.random() * this.canvas.height;
+          const x = this.canvas.width - 20;
+          let randomX = Math.random() * (5 - -5) + -5;
 
-        this.obstacles.push(new Obstacle(this.ctx, x, y, 1, randomX));
+          this.obstacles.push(new Obstacle(this.ctx, x, y, 1, randomX));
+        }
+      } else if (this.score >= 10 && this.score < 20) {
+        if (Math.random() > 0.96) {
+          const y = Math.random() * this.canvas.height;
+          const x = this.canvas.width - 20;
+          let randomX = Math.random() * (5 - -5) + -5;
+
+          this.obstacles.push(new Obstacle(this.ctx, x, y, 1, randomX));
+        }
+      } else if (this.score >= 20 && this.score < 30) {
+        if (Math.random() > 0.95) {
+          const y = Math.random() * this.canvas.height;
+          const x = this.canvas.width - 20;
+          let randomX = Math.random() * (5 - -5) + -5;
+
+          this.obstacles.push(new Obstacle(this.ctx, x, y, 1, randomX));
+        }
+      } else if (this.score >= 20 && this.score < 30) {
+        if (Math.random() > 0.94) {
+          const y = Math.random() * this.canvas.height;
+          const x = this.canvas.width - 20;
+          let randomX = Math.random() * (5 - -5) + -5;
+
+          this.obstacles.push(new Obstacle(this.ctx, x, y, 1, randomX));
+        }
+      } else if (this.score >= 30 && this.score < 40) {
+        if (Math.random() > 0.93) {
+          const y = Math.random() * this.canvas.height;
+          const x = this.canvas.width - 20;
+          let randomX = Math.random() * (5 - -5) + -5;
+
+          this.obstacles.push(new Obstacle(this.ctx, x, y, 1, randomX));
+        }
+      } else if (this.score >= 40) {
+        if (Math.random() > 0.92) {
+          const y = Math.random() * this.canvas.height;
+          const x = this.canvas.width - 20;
+          let randomX = Math.random() * (5 - -5) + -5;
+
+          this.obstacles.push(new Obstacle(this.ctx, x, y, 1, randomX));
+        }
       }
 
       // 1. UPDATE THE STATE OF PLAYER AND WE MOVE THE OBSTACLES
@@ -99,6 +142,7 @@ class Game {
         window.requestAnimationFrame(loop);
       } else {
         buildGameOver(this.score);
+        this.updateHighScore();
       }
     };
 
@@ -118,4 +162,8 @@ class Game {
       }
     });
   }
+  updateHighScore() {
+    if (this.finalScore > this.highScore) highScore = finalScore;
+  }
 }
+console.log(updateHighScore());

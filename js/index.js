@@ -21,6 +21,7 @@ const buildSplashScreen = () => {
 // Second Screen => Game Screen
 const buildGameScreen = () => {
   buildDom(`
+  <h3 id="high-score-header: ">High score:  <span id="high-score">0</span></h3>
   <div class = "text">
     <h3 class="score">Saved: <span id="score-span">0</span></h3>
     <h3> lives: <span id="lives-span">5</span></h3>
@@ -29,7 +30,7 @@ const buildGameScreen = () => {
     <canvas id="canvas" width="900" height="600" style="background: url('/images/goal.jpeg')"></canvas>
     </div>  
     <button id="end-button">End Game</button>
-    <audio controls autoplay>
+    <audio  autoplay>
   <source src="motd.mp3" type="audio/mpeg">
 Your browser does not support the audio element.
 </audio>
@@ -37,6 +38,7 @@ Your browser does not support the audio element.
 
   const endButton = document.getElementById("end-button");
   endButton.addEventListener("click", buildGameOver);
+  const highScore = document.querySelector("#high-score").innerHTML;
 
   const game = new Game();
 
@@ -57,7 +59,7 @@ const buildGameOver = (score) => {
 
   const restartButton = document.querySelector("button");
   restartButton.addEventListener("click", buildGameScreen);
-  document.querySelector("#final-score").innerHTML = score;
+  let finalScore = (document.querySelector("#final-score").innerHTML = score);
 };
 
 // When the window loads, then we will run the "buildSplashScreen" function

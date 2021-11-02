@@ -17,8 +17,9 @@ class Player {
   }
 
   update(x, y) {
+    console.log(x, y);
     this.x = x;
-    this.y = y;
+    if (y < 330) this.y = y;
     this.checkScreen();
   }
 
