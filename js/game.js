@@ -65,7 +65,10 @@ class Game {
       if (Math.random() > 0.99) {
         const y = Math.random() * this.canvas.height;
         const x = this.canvas.width - 20;
-        this.obstacles.push(new Obstacle(this.ctx, x, y, 1));
+        let randomX = Math.random() * (5 - (-5)) + -5;
+
+
+        this.obstacles.push(new Obstacle(this.ctx, x, y, 1, randomX));
       }
 
       // 1. UPDATE THE STATE OF PLAYER AND WE MOVE THE OBSTACLES
@@ -84,8 +87,11 @@ class Game {
       this.player.draw();
 
       // Draw the enemies
+
       this.obstacles.forEach((obstacle) => {
+
         obstacle.draw();
+
       });
 
       // 4. TERMINATE LOOP IF GAME IS OVER
