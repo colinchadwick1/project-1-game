@@ -44,6 +44,7 @@ class Game {
       }
     };
     this.handleMouseMove = (e) => {
+      console.log(e);
       this.player.update(e.x, e.y);
     };
 
@@ -58,7 +59,7 @@ class Game {
   startLoop() {
     const loop = () => {
       // We create the obstacles with random y
-      if (Math.random() > 0.96) {
+      if (Math.random() > 0.99) {
         const y = Math.random() * this.canvas.height;
         const x = this.canvas.width - 20;
         let randomX = Math.random() * (5 - -5) + -5;
