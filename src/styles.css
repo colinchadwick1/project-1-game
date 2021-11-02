@@ -3,6 +3,8 @@ body {
   align-items: center;
   flex-direction: column;
   justify-content: center;
+  background-image: url("/images/background-img.jpeg");
+  color: white;
 }
 .container {
   display: flex;
@@ -17,6 +19,7 @@ body {
   margin-left: 41%;
   font-family: "Fruktur", cursive;
   font-size: 4em;
+  color: white;
 }
 
 #start-ball {
