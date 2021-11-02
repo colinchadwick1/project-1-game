@@ -33,6 +33,7 @@ const buildGameScreen = () => {
   endButton.addEventListener("click", buildGameOver);
 
   const game = new Game();
+
   game.start();
 };
 
