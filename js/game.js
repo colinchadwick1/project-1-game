@@ -7,6 +7,7 @@ class Game {
     this.player = null;
     this.gameIsOver = false;
     this.score = 0;
+    this.lives = 4;
   }
 
   start() {
@@ -24,33 +25,24 @@ class Game {
         this.player.x -= this.player.speed;
       } else if (event.code === "ArrowRight") {
         this.player.x += this.player.speed;
-      }else if (event.code === "ArrowUp") {
+      } else if (event.code === "ArrowUp") {
         this.player.y -= this.player.speed;
-    }else if (event.code === "ArrowDown") {
-      this.player.y += this.player.speed; 
-    }else if (event.code === "ArrowDown" && event.code === "ArrowLeft") {
-      this.player.y += this.player.speed; 
-      this.player.x -= this.player.speed;
-    } else if (event.code === "ArrowDown" && event.code === "ArrowRight") {
-      this.player.y += this.player.speed; 
-      this.player.x += this.player.speed;
-  } else if (event.code === "ArrowUp" && event.code === "ArrowLeft") {
-    this.player.y -= this.player.speed;
-    this.player.x -= this.player.speed;
-  }else if (event.code === "ArrowUp" && event.code === "ArrowRight") {
-    this.player.y -= this.player.speed;
-    this.player.x += this.player.speed;
-  }
-
-    }
-
-   
-
-   
-	
-
-
-
+      } else if (event.code === "ArrowDown") {
+        this.player.y += this.player.speed;
+      } else if (event.code === "ArrowDown" && event.code === "ArrowLeft") {
+        this.player.y += this.player.speed;
+        this.player.x -= this.player.speed;
+      } else if (event.code === "ArrowDown" && event.code === "ArrowRight") {
+        this.player.y += this.player.speed;
+        this.player.x += this.player.speed;
+      } else if (event.code === "ArrowUp" && event.code === "ArrowLeft") {
+        this.player.y -= this.player.speed;
+        this.player.x -= this.player.speed;
+      } else if (event.code === "ArrowUp" && event.code === "ArrowRight") {
+        this.player.y -= this.player.speed;
+        this.player.x += this.player.speed;
+      }
+    };
 
     // Any function provided to eventListener
     document.body.addEventListener("keydown", this.handleKeyDown);
@@ -65,16 +57,21 @@ class Game {
       if (Math.random() > 0.99) {
         const y = Math.random() * this.canvas.height;
         const x = this.canvas.width - 20;
-        let randomX = Math.random() * (5 - (-5)) + -5;
-
+        let randomX = Math.random() * (5 - -5) + -5;
 
         this.obstacles.push(new Obstacle(this.ctx, x, y, 1, randomX));
       }
 
       // 1. UPDATE THE STATE OF PLAYER AND WE MOVE THE OBSTACLES
       //this.player.update();
-      this.obstacles.forEach((obstacle) => {
+      this.obstacles.forEach((obstacle, index) => {
         obstacle.move();
+        if (obstacle.y === 180) {
+          document.querySelector("#lives-span").innerHTML = this.lives;
+          this.lives -= 1;
+          this.obstacles.splice(index, 1);
+          if (this.lives === 0) this.gameIsOver = true;
+        }
       });
 
       this.checkCollisions();
@@ -89,16 +86,14 @@ class Game {
       // Draw the enemies
 
       this.obstacles.forEach((obstacle) => {
-
         obstacle.draw();
-
       });
 
       // 4. TERMINATE LOOP IF GAME IS OVER
       if (!this.gameIsOver) {
         window.requestAnimationFrame(loop);
       } else {
-        buildGameOver();
+        buildGameOver(this.score);
       }
     };
 
@@ -111,12 +106,11 @@ class Game {
   checkCollisions() {
     this.obstacles.forEach((obstacle, index) => {
       if (this.player.didCollide(obstacle)) {
-       this.score += 1
-       document.querySelector("#score-span").innerHTML = this.score
-       console.log(this.score)
-       this.obstacles.splice(index, 1)
+        this.score += 1;
+        document.querySelector("#score-span").innerHTML = this.score;
+        console.log(this.score);
+        this.obstacles.splice(index, 1);
       }
-      
     });
   }
 }
