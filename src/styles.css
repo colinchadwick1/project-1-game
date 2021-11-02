@@ -107,3 +107,9 @@ body {
   cursor: none;
   border-radius: 25px;
 }
+.text {
+  display: flex;
+  justify-content: space-between;
+
+}
+

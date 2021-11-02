@@ -21,8 +21,10 @@ const buildSplashScreen = () => {
 // Second Screen => Game Screen
 const buildGameScreen = () => {
   buildDom(`
+  <div class = "text">
     <h3 class="score">Saved: <span id="score-span">0</span></h3>
-    <h3> lives <span id="lives-span">5</span></h3>
+    <h3> lives: <span id="lives-span">5</span></h3>
+    </div>
     <div id="game-board">
     <canvas id="canvas" width="900" height="600" style="background: url('/images/goal.jpeg')"></canvas>
     </div>  
@@ -44,10 +46,10 @@ Your browser does not support the audio element.
 // Third Screen => Game Over
 const buildGameOver = (score) => {
   buildDom(`
+  
     <section class="game-over">
     <h1>Game Over</h1>
     <h3>Score: <span id="final-score">0</span></h3>
-    <img src="/images/end.jpeg" id="end-image"/>
     <button id = "game"> TRY AGAIN</button>
     <div class= "pointer"> </div>
     </section>
