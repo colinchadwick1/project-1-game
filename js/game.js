@@ -43,9 +43,15 @@ class Game {
         this.player.x += this.player.speed;
       }
     };
+    this.handleMouseMove = (e) => {
+
+
+      this.player.update(e.x, e.y);
+    };
 
     // Any function provided to eventListener
     document.body.addEventListener("keydown", this.handleKeyDown);
+    document.body.addEventListener("mousemove", this.handleMouseMove);
 
     // Start the canvas requestAnimationFrame loop
     this.startLoop();

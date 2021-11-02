@@ -16,8 +16,9 @@ class Player {
     this.speed = 75;
   }
 
-  update() {
-    this.x = this.x + this.speed;
+  update(x, y) {
+    this.x = x;
+    this.y = y;
     this.checkScreen();
   }
 
