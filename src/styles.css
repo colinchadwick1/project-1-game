@@ -5,6 +5,7 @@ body {
   justify-content: center;
   background-image: url("/images/background-img.jpeg");
   color: white;
+  font-family: "itc-novarese-std-2", sans-serif;
 }
 .container {
   display: flex;
@@ -104,4 +105,5 @@ body {
 }
 #canvas {
   cursor: none;
+  border-radius: 25px;
 }

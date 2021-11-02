@@ -27,6 +27,10 @@ const buildGameScreen = () => {
     <canvas id="canvas" width="900" height="600" style="background: url('/images/goal.jpeg')"></canvas>
     </div>  
     <button id="end-button">End Game</button>
+    <audio controls autoplay>
+  <source src="motd.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
     `);
 
   const endButton = document.getElementById("end-button");
