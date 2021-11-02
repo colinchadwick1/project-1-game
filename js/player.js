@@ -1,8 +1,7 @@
 "use strict";
 
-const gloves = new Image ();
-gloves.src = "/images/gloves.png"
-
+const gloves = new Image();
+gloves.src = "/images/gloves.png";
 
 class Player {
   constructor(canvas, lives) {
@@ -14,18 +13,12 @@ class Player {
     this.x = 50;
     this.y = canvas.height / 2;
     this.direction = 0;
-    this.speed = 25;
+    this.speed = 75;
   }
 
   update() {
     this.x = this.x + this.speed;
     this.checkScreen();
-  }
-
-  setDirection(direction) {
-    // +1 down  -1 up
-    if (direction === "left") this.direction = -1;
-    else if (direction === "right") this.direction = 1;
   }
 
   // Check if the player is out of the screen / canvas
@@ -40,10 +33,7 @@ class Player {
   draw() {
     this.ctx.fillStyle = "white";
     // fillRect(x, y, width, height)
-    this.ctx.drawImage(gloves, this.x, this.y, this.size, this.size )
-    
-
-
+    this.ctx.drawImage(gloves, this.x, this.y, this.size, this.size);
   }
 
   didCollide(obstacle) {

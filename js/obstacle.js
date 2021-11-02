@@ -22,7 +22,5 @@ class Obstacle {
 
   move() {
     if (this.y > 180) this.y += this.speed * -6;
-    if(this.y === 180) {
-    }
   }
 }
