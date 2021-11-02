@@ -58,7 +58,7 @@ class Game {
   startLoop() {
     const loop = () => {
       // We create the obstacles with random y
-      if (Math.random() > 0.99) {
+      if (Math.random() > 0.96) {
         const y = Math.random() * this.canvas.height;
         const x = this.canvas.width - 20;
         let randomX = Math.random() * (5 - -5) + -5;

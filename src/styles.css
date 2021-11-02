@@ -1,41 +1,98 @@
 body {
-    display: flex;
-    align-items: center;
-    flex-direction:column;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  font-family: "Fruktur";
 }
 .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .goalies {
-    margin: auto;
-    width: 60%;
-    padding: 10px;
-    }
+  margin: auto;
+  width: 60%;
+  padding: 10px;
+  margin-left: 47%;
+}
 
-    #start-ball {
-        width: 30%;
-        margin: 50px;
-    }
+#start-ball {
+  width: 30%;
+  margin: 50px;
+  margin-left: 40%;
+}
 
-    #ball-img {
-        display: none;
-    }
-    #start-button {
-        width: 20%;
-        padding: 15px;
-        margin: 20px;
+#ball-img {
+  display: none;
+}
+#start-button {
+  width: 30%;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: green;
+  padding: 20px;
+  border-radius: 5px;
+  display: inline-block;
+  border: none;
+  transition: all 0.4s ease 0s;
+  color: white;
+  margin-left: 40%;
+}
+#start-button:hover {
+  background: #434343;
+  letter-spacing: 1px;
+  -webkit-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+  -moz-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+  box-shadow: 5px 40px -10px rgba(0, 0, 0, 0.57);
+  transition: all 0.4s ease 0s;
+}
+#end-button {
+  text-transform: uppercase;
+  text-decoration: none;
+  background: green;
+  padding: 20px;
+  border-radius: 5px;
+  display: inline-block;
+  border: none;
+  transition: all 0.4s ease 0s;
+  color: white;
+}
+#end-button:hover {
+  background: #434343;
+  letter-spacing: 1px;
+  -webkit-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+  -moz-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+  box-shadow: 5px 40px -10px rgba(0, 0, 0, 0.57);
+  transition: all 0.4s ease 0s;
+}
+#game {
+  text-transform: uppercase;
+  text-decoration: none;
+  background: green;
+  padding: 20px;
+  border-radius: 5px;
+  display: inline-block;
+  border: none;
+  transition: all 0.4s ease 0s;
+}
 
-    }
-    #end-button {
-        width: 20%;
-        padding: 15px;
-        margin: 20px;
-    }
+#game:hover {
+  background: #434343;
+  letter-spacing: 1px;
+  -webkit-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+  -moz-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+  box-shadow: 5px 40px -10px rgba(0, 0, 0, 0.57);
+  transition: all 0.4s ease 0s;
+}
+#game-over {
+    display: flex;
+    flex-direction: column;
 
- 
-    
+}
+
+#end-image {
+  width: 40%;
+  height: auto;
+}
