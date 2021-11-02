@@ -44,8 +44,6 @@ class Game {
       }
     };
     this.handleMouseMove = (e) => {
-
-
       this.player.update(e.x, e.y);
     };
 
