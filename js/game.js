@@ -1,4 +1,6 @@
-"use strict";
+let highScore = 0;
+
+("use strict");
 class Game {
   constructor() {
     this.canvas = null;
@@ -8,7 +10,6 @@ class Game {
     this.gameIsOver = false;
     this.score = 0;
     this.lives = 4;
-    this.highScore = [];
   }
 
   start() {
@@ -163,7 +164,7 @@ class Game {
     });
   }
   updateHighScore() {
-    if (this.finalScore > this.highScore) highScore = finalScore;
+    if (this.score > highScore) highScore = this.score;
   }
 }
 console.log(updateHighScore());

@@ -38,7 +38,7 @@ Your browser does not support the audio element.
 
   const endButton = document.getElementById("end-button");
   endButton.addEventListener("click", buildGameOver);
-  const highScore = document.querySelector("#high-score").innerHTML;
+  document.querySelector("#high-score").innerHTML = highScore;
 
   const game = new Game();
 
@@ -60,6 +60,7 @@ const buildGameOver = (score) => {
   const restartButton = document.querySelector("button");
   restartButton.addEventListener("click", buildGameScreen);
   let finalScore = (document.querySelector("#final-score").innerHTML = score);
+  if (finalScore > highScore) highScore = finalScore;
 };
 
 // When the window loads, then we will run the "buildSplashScreen" function
