@@ -11,6 +11,8 @@ const buildSplashScreen = () => {
     <br />
     <img src="/images/start-ball.png" alt="world-cup-ball" id="start-ball"/>
     <button id="start-button">Start Game</button>
+    <div class = "rules">
+    </div
     `);
   const startButton = document.getElementById("start-button");
 

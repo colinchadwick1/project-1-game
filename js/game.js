@@ -46,7 +46,6 @@ class Game {
       }
     };
     this.handleMouseMove = (e) => {
-      console.log(e);
       this.player.update(e.x, e.y);
     };
 
@@ -61,19 +60,19 @@ class Game {
   startLoop() {
     const loop = () => {
       // We create the obstacles with random y
-      if (this.score < 10) {
+      if (this.score < 20) {
         if (Math.random() > 0.99) {
           const y = Math.random() * this.canvas.height;
           const x = this.canvas.width - 20;
           let randomX = Math.random() * (5 - -5) + -5;
           this.obstacles.push(new Obstacle(this.ctx, x, y, 1, randomX));
-          if (Math.random() > 0.97)
+          if (Math.random() > 0.85)
             this.obstacles.push(new RedBall(this.ctx, x, y, 1, randomX));
-          if (Math.random() > 0.5)
+          if (Math.random() > 0.8)
             this.obstacles.push(new Rock(this.ctx, x, y, 1, randomX));
         }
-      } else if (this.score >= 10 && this.score < 20) {
-        if (Math.random() > 0.96) {
+      } else if (this.score >= 20 && this.score < 40) {
+        if (Math.random() > 0.98) {
           const y = Math.random() * this.canvas.height;
           const x = this.canvas.width - 20;
           let randomX = Math.random() * (5 - -5) + -5;
@@ -84,8 +83,8 @@ class Game {
           if (Math.random() > 0.5)
             this.obstacles.push(new Rock(this.ctx, x, y, 1, randomX));
         }
-      } else if (this.score >= 20 && this.score < 30) {
-        if (Math.random() > 0.95) {
+      } else if (this.score >= 40 && this.score < 70) {
+        if (Math.random() > 0.97) {
           const y = Math.random() * this.canvas.height;
           const x = this.canvas.width - 20;
           let randomX = Math.random() * (5 - -5) + -5;
@@ -96,7 +95,7 @@ class Game {
           if (Math.random() > 0.5)
             this.obstacles.push(new Rock(this.ctx, x, y, 1, randomX));
         }
-      } else if (this.score >= 20 && this.score < 30) {
+      } else if (this.score >= 70 && this.score < 100) {
         if (Math.random() > 0.94) {
           const y = Math.random() * this.canvas.height;
           const x = this.canvas.width - 20;
@@ -108,20 +107,8 @@ class Game {
           if (Math.random() > 0.5)
             this.obstacles.push(new Rock(this.ctx, x, y, 1, randomX));
         }
-      } else if (this.score >= 30 && this.score < 40) {
+      } else if (this.score > 100) {
         if (Math.random() > 0.93) {
-          const y = Math.random() * this.canvas.height;
-          const x = this.canvas.width - 20;
-          let randomX = Math.random() * (5 - -5) + -5;
-
-          this.obstacles.push(new Obstacle(this.ctx, x, y, 1, randomX));
-          if (Math.random() > 0.97)
-            this.obstacles.push(new RedBall(this.ctx, x, y, 1, randomX));
-          if (Math.random() > 0.5)
-            this.obstacles.push(new Rock(this.ctx, x, y, 1, randomX));
-        }
-      } else if (this.score >= 40) {
-        if (Math.random() > 0.92) {
           const y = Math.random() * this.canvas.height;
           const x = this.canvas.width - 20;
           let randomX = Math.random() * (5 - -5) + -5;
@@ -179,10 +166,27 @@ class Game {
   checkCollisions() {
     this.obstacles.forEach((obstacle, index) => {
       if (this.player.didCollide(obstacle)) {
-        this.score += 1;
-        document.querySelector("#score-span").innerHTML = this.score;
-        console.log(this.score);
-        this.obstacles.splice(index, 1);
+        if (obstacle.type === "ball") {
+          this.score += 1;
+          document.querySelector("#score-span").innerHTML = this.score;
+          console.log(this.score);
+          this.obstacles.splice(index, 1);
+          console.log(this.obstacles);
+        }
+        if (obstacle.type === "RedBall") {
+          this.score += 10;
+          document.querySelector("#score-span").innerHTML = this.score;
+          console.log(this.score);
+          this.obstacles.splice(index, 1);
+          console.log(this.obstacles);
+        }
+        if (obstacle.type === "Rock") {
+          this.lives -= 1;
+          document.querySelector("#lives-span").innerHTML = this.lives;
+          console.log(this.score);
+          this.obstacles.splice(index, 1);
+          console.log(this.obstacles);
+        }
       }
     });
   }

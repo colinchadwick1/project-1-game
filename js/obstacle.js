@@ -11,6 +11,7 @@ class Obstacle {
     this.size = 30;
     this.direction = direction;
     this.imageSrc = "/images/soccer.png";
+    this.type = "ball"
   }
 
   draw() {
@@ -34,6 +35,7 @@ class RedBall extends Obstacle {
 
     this.imageSrc = "/images/redBall.png";
     this.size = 60;
+    this.type = "RedBall"
   }
   draw() {
     this.ctx.fillStyle = this.color;
@@ -51,6 +53,7 @@ class RedBall extends Obstacle {
   
       this.imageSrc = "/images/rock.png";
       this.size = 30;
+      this.type="Rock"
     }
     draw() {
       this.ctx.fillStyle = this.color;
