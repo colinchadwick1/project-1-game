@@ -19,8 +19,8 @@ body {
 #start-ball {
   width: 30%;
   margin: 50px;
-  margin-left: 40%;
-  margin-bottom: 30%;
+  margin-left: 35%;
+  margin-top: -110px;
 }
 
 #ball-img {
