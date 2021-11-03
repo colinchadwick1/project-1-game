@@ -111,3 +111,10 @@ body {
   display: flex;
   justify-content: space-between;
 }
+#header {
+  display: flex;
+  justify-content: space-evenly;
+  
+  height: 20px;
+  z-index: 100;
+}

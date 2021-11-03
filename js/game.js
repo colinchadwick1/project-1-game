@@ -1,4 +1,5 @@
 let highScore = 0;
+const myStorage = window.localStorage;
 
 ("use strict");
 class Game {
