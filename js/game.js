@@ -1,5 +1,4 @@
 let highScore = 0;
-const myStorage = window.localStorage;
 
 ("use strict");
 class Game {
@@ -109,11 +108,11 @@ class Game {
             let randomX = Math.random() * (5 - -5) + -5;
             this.obstacles.push(new RedBall(this.ctx, x, y, 1, randomX));
           }
-          if (Math.random() > 0.9) {
+          if (Math.random() > 0.85) {
             let randomX = Math.random() * (5 - -5) + -5;
             this.obstacles.push(new Rock(this.ctx, x, y, 1, randomX));
           }
-          if (Math.random() > 0.9) {
+          if (Math.random() > 0.99) {
             let randomX = Math.random() * (5 - -5) + -5;
             this.obstacles.push(new One(this.ctx, x, y, 1, randomX));
           }

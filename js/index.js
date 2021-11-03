@@ -6,13 +6,17 @@ const buildDom = (html) => {
 // First Screen => Splash Screen
 const buildSplashScreen = () => {
   buildDom(`
-  <h1 class ="goalies">Goalies </h1>
+  <main class="main">
     <img src="" alt="" style="width:50%;" />
     <br />
     <img src="/images/start-ball.png" alt="world-cup-ball" id="start-ball"/>
     <button id="start-button">Start Game</button>
     <div class = "rules">
-    </div
+  <span><img class = "img-rules" src="/images/rock.png"/> = -1 lives</span>
+  <span><img class = "img-rules" src="/images/redBall.png"/> = +5 points</span>
+  <span><img  class = "img-rules"src="/images/one.png"/> = +1 life</span>
+    </div>
+    </main>
     `);
   const startButton = document.getElementById("start-button");
 
@@ -42,9 +46,6 @@ Your browser does not support the audio element.
   const endButton = document.getElementById("end-button");
   endButton.addEventListener("click", buildGameOver);
   document.querySelector("#high-score").innerHTML = highScore;
-  myStorage.setItem("score", String(highScore));
-  myStorage.getItem("score", String(highScore));
-  console.log(myStorage);
 
   const game = new Game();
 
@@ -66,8 +67,6 @@ const buildGameOver = (score) => {
   const restartButton = document.querySelector("button");
   restartButton.addEventListener("click", buildGameScreen);
   let finalScore = (document.querySelector("#final-score").innerHTML = score);
-  if (finalScore > highScore) highScore = finalScore;
-  console.log("myStorage", myStorage);
 };
 
 // When the window loads, then we will run the "buildSplashScreen" function

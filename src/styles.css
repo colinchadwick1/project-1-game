@@ -3,8 +3,9 @@ body {
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  background-image: url("/images/background-img.jpeg");
-  color: white;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: black;
   font-family: "itc-novarese-std-2", sans-serif;
 }
 .container {
@@ -13,15 +14,7 @@ body {
   justify-content: center;
 }
 
-.goalies {
-  margin: auto;
-  width: 60%;
-  padding: 10px;
-  margin-left: 41%;
-  font-family: "Fruktur", cursive;
-  font-size: 4em;
-  color: white;
-}
+
 
 #start-ball {
   width: 30%;
@@ -99,10 +92,7 @@ body {
   flex-direction: column;
 }
 
-#end-image {
-  width: 40%;
-  height: auto;
-}
+
 #canvas {
   cursor: none;
   border-radius: 25px;
@@ -114,7 +104,24 @@ body {
 #header {
   display: flex;
   justify-content: space-evenly;
-  
+  color: white
+
   height: 20px;
   z-index: 100;
 }
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.rules {
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+margin: 70px;
+align-items: center;
+}
+.img-rules {
+  width: 40px;
+}
+
