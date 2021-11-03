@@ -37,14 +37,6 @@ class RedBall extends Obstacle {
     this.size = 60;
     this.type = "RedBall";
   }
-  // draw() {
-  //   this.ctx.fillStyle = this.color;
-
-  //   const fireBall = new Image();
-  //   fireBall.src = this.imageSrc;
-  //   this.ctx.drawImage(fireBall, this.x, this.y, this.size, this.size);
-  //   this.x += this.direction;
-  // }
 }
 
 class Rock extends Obstacle {
@@ -55,11 +47,13 @@ class Rock extends Obstacle {
     this.size = 30;
     this.type = "Rock";
   }
-  // draw() {
+}
+class One extends Obstacle {
+  constructor(ctx, x, y, speed, direction) {
+    super(ctx, x, y, speed, direction);
 
-  //   const rock = new Image();
-  //   rock.src = this.imageSrc;
-  //   this.ctx.drawImage(rock, this.x, this.y, this.size, this.size);
-  //   this.x += this.direction;
-  // }
+    this.imageSrc = "/images/one.png";
+    this.size = 30;
+    this.type = "One";
+  }
 }

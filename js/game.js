@@ -9,7 +9,7 @@ class Game {
     this.player = null;
     this.gameIsOver = false;
     this.score = 0;
-    this.lives = 4;
+    this.lives = 5;
   }
 
   start() {
@@ -74,6 +74,10 @@ class Game {
             let randomX = Math.random() * (5 - -5) + -5;
             this.obstacles.push(new Rock(this.ctx, x, y, 1, randomX));
           }
+          if (Math.random() > 0.9) {
+            let randomX = Math.random() * (5 - -5) + -5;
+            this.obstacles.push(new One(this.ctx, x, y, 1, randomX));
+          }
         }
       } else if (this.score >= 20 && this.score < 50) {
         if (Math.random() > 0.97) {
@@ -89,9 +93,13 @@ class Game {
             let randomX = Math.random() * (5 - -5) + -5;
             this.obstacles.push(new Rock(this.ctx, x, y, 1, randomX));
           }
+          if (Math.random() > 0.9) {
+            let randomX = Math.random() * (5 - -5) + -5;
+            this.obstacles.push(new One(this.ctx, x, y, 1, randomX));
+          }
         }
       } else if (this.score >= 50) {
-        if (Math.random() > 0.96) {
+        if (Math.random() > 0.97) {
           const y = Math.random() * this.canvas.height;
           const x = this.canvas.width - 20;
           let randomX = Math.random() * (5 - -5) + -5;
@@ -103,6 +111,10 @@ class Game {
           if (Math.random() > 0.9) {
             let randomX = Math.random() * (5 - -5) + -5;
             this.obstacles.push(new Rock(this.ctx, x, y, 1, randomX));
+          }
+          if (Math.random() > 0.9) {
+            let randomX = Math.random() * (5 - -5) + -5;
+            this.obstacles.push(new One(this.ctx, x, y, 1, randomX));
           }
         }
       }
@@ -123,7 +135,8 @@ class Game {
       this.obstacles.forEach((obstacle, index) => {
         obstacle.move();
         if (obstacle.y <= 180) {
-          if (obstacle.type !== "Rock") this.lives -= 1;
+          if (obstacle.type !== "Rock" && obstacle.type !== "One")
+            this.lives -= 1;
           this.obstacles.splice(index, 1);
         }
       });
@@ -160,11 +173,15 @@ class Game {
           this.obstacles.splice(index, 1);
         }
         if (obstacle.type === "RedBall") {
-          this.score += 10;
+          this.score += 5;
           this.obstacles.splice(index, 1);
         }
         if (obstacle.type === "Rock") {
           this.lives -= 1;
+          this.obstacles.splice(index, 1);
+        }
+        if (obstacle.type === "One") {
+          this.lives += 1;
           this.obstacles.splice(index, 1);
         }
       }
