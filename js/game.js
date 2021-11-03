@@ -62,12 +62,15 @@ class Game {
     const loop = () => {
       // We create the obstacles with random y
       if (this.score < 10) {
-        if (Math.random() > 0.97) {
+        if (Math.random() > 0.99) {
           const y = Math.random() * this.canvas.height;
           const x = this.canvas.width - 20;
           let randomX = Math.random() * (5 - -5) + -5;
-
           this.obstacles.push(new Obstacle(this.ctx, x, y, 1, randomX));
+          if (Math.random() > 0.97)
+            this.obstacles.push(new RedBall(this.ctx, x, y, 1, randomX));
+          if (Math.random() > 0.5)
+            this.obstacles.push(new Rock(this.ctx, x, y, 1, randomX));
         }
       } else if (this.score >= 10 && this.score < 20) {
         if (Math.random() > 0.96) {
@@ -76,6 +79,10 @@ class Game {
           let randomX = Math.random() * (5 - -5) + -5;
 
           this.obstacles.push(new Obstacle(this.ctx, x, y, 1, randomX));
+          if (Math.random() > 0.97)
+            this.obstacles.push(new RedBall(this.ctx, x, y, 1, randomX));
+          if (Math.random() > 0.5)
+            this.obstacles.push(new Rock(this.ctx, x, y, 1, randomX));
         }
       } else if (this.score >= 20 && this.score < 30) {
         if (Math.random() > 0.95) {
@@ -84,6 +91,10 @@ class Game {
           let randomX = Math.random() * (5 - -5) + -5;
 
           this.obstacles.push(new Obstacle(this.ctx, x, y, 1, randomX));
+          if (Math.random() > 0.97)
+            this.obstacles.push(new RedBall(this.ctx, x, y, 1, randomX));
+          if (Math.random() > 0.5)
+            this.obstacles.push(new Rock(this.ctx, x, y, 1, randomX));
         }
       } else if (this.score >= 20 && this.score < 30) {
         if (Math.random() > 0.94) {
@@ -92,6 +103,10 @@ class Game {
           let randomX = Math.random() * (5 - -5) + -5;
 
           this.obstacles.push(new Obstacle(this.ctx, x, y, 1, randomX));
+          if (Math.random() > 0.97)
+            this.obstacles.push(new RedBall(this.ctx, x, y, 1, randomX));
+          if (Math.random() > 0.5)
+            this.obstacles.push(new Rock(this.ctx, x, y, 1, randomX));
         }
       } else if (this.score >= 30 && this.score < 40) {
         if (Math.random() > 0.93) {
@@ -100,6 +115,10 @@ class Game {
           let randomX = Math.random() * (5 - -5) + -5;
 
           this.obstacles.push(new Obstacle(this.ctx, x, y, 1, randomX));
+          if (Math.random() > 0.97)
+            this.obstacles.push(new RedBall(this.ctx, x, y, 1, randomX));
+          if (Math.random() > 0.5)
+            this.obstacles.push(new Rock(this.ctx, x, y, 1, randomX));
         }
       } else if (this.score >= 40) {
         if (Math.random() > 0.92) {
@@ -108,6 +127,10 @@ class Game {
           let randomX = Math.random() * (5 - -5) + -5;
 
           this.obstacles.push(new Obstacle(this.ctx, x, y, 1, randomX));
+          if (Math.random() > 0.97)
+            this.obstacles.push(new RedBall(this.ctx, x, y, 1, randomX));
+          if (Math.random() > 0.5)
+            this.obstacles.push(new Rock(this.ctx, x, y, 1, randomX));
         }
       }
 
@@ -167,4 +190,3 @@ class Game {
     if (this.score > highScore) highScore = this.score;
   }
 }
-console.log(updateHighScore());

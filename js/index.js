@@ -6,6 +6,7 @@ const buildDom = (html) => {
 // First Screen => Splash Screen
 const buildSplashScreen = () => {
   buildDom(`
+  <h1 class ="goalies">Goalies </h1>
     <img src="" alt="" style="width:50%;" />
     <br />
     <img src="/images/start-ball.png" alt="world-cup-ball" id="start-ball"/>
@@ -21,11 +22,15 @@ const buildSplashScreen = () => {
 // Second Screen => Game Screen
 const buildGameScreen = () => {
   buildDom(`
+  <header id="header">
+  <div class="scores">
   <h3 id="high-score-header: ">High score:  <span id="high-score">0</span></h3>
   <div class = "text">
     <h3 class="score">Saved: <span id="score-span">0</span></h3>
     <h3> lives: <span id="lives-span">5</span></h3>
     </div>
+    </div>
+    </header>
     <div id="game-board">
     <canvas id="canvas" width="900" height="600" style="background: url('/images/goal.jpeg')"></canvas>
     </div>  
