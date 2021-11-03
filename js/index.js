@@ -7,6 +7,7 @@ const buildDom = (html) => {
 const buildSplashScreen = () => {
   buildDom(`
   <main class="main">
+  <img src="/images/GOALIES.png"/>
     <img src="" alt="" style="width:50%;" />
     <br />
     <img src="/images/start-ball.png" alt="world-cup-ball" id="start-ball"/>

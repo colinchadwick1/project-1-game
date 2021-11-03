@@ -20,6 +20,7 @@ body {
   width: 30%;
   margin: 50px;
   margin-left: 40%;
+  margin-bottom: 30%;
 }
 
 #ball-img {
@@ -124,4 +125,5 @@ align-items: center;
 .img-rules {
   width: 40px;
 }
+
 
