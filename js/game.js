@@ -66,72 +66,49 @@ class Game {
           const x = this.canvas.width - 20;
           let randomX = Math.random() * (5 - -5) + -5;
           this.obstacles.push(new Obstacle(this.ctx, x, y, 1, randomX));
-          if (Math.random() > 0.2)
+          if (Math.random() > 0.9) {
+            let randomX = Math.random() * (5 - -5) + -5;
             this.obstacles.push(new RedBall(this.ctx, x, y, 1, randomX));
-          if (Math.random() > 0.2)
+          }
+          if (Math.random() > 0.9) {
+            let randomX = Math.random() * (5 - -5) + -5;
             this.obstacles.push(new Rock(this.ctx, x, y, 1, randomX));
+          }
         }
-      } else if (this.score >= 20 && this.score < 40) {
-        if (Math.random() > 0.98) {
-          const y = Math.random() * this.canvas.height;
-          const x = this.canvas.width - 20;
-          let randomX = Math.random() * (5 - -5) + -5;
-
-          this.obstacles.push(new Obstacle(this.ctx, x, y, 1, randomX));
-          if (Math.random() > 0.97)
-            this.obstacles.push(new RedBall(this.ctx, x, y, 1, randomX));
-          if (Math.random() > 0.5)
-            this.obstacles.push(new Rock(this.ctx, x, y, 1, randomX));
-        }
-      } else if (this.score >= 40 && this.score < 70) {
+      } else if (this.score >= 20 && this.score < 50) {
         if (Math.random() > 0.97) {
           const y = Math.random() * this.canvas.height;
           const x = this.canvas.width - 20;
           let randomX = Math.random() * (5 - -5) + -5;
-
           this.obstacles.push(new Obstacle(this.ctx, x, y, 1, randomX));
-          if (Math.random() > 0.97)
+          if (Math.random() > 0.9) {
+            let randomX = Math.random() * (5 - -5) + -5;
             this.obstacles.push(new RedBall(this.ctx, x, y, 1, randomX));
-          if (Math.random() > 0.5)
+          }
+          if (Math.random() > 0.9) {
+            let randomX = Math.random() * (5 - -5) + -5;
             this.obstacles.push(new Rock(this.ctx, x, y, 1, randomX));
+          }
         }
-      } else if (this.score >= 70 && this.score < 100) {
-        if (Math.random() > 0.94) {
+      } else if (this.score >= 50) {
+        if (Math.random() > 0.96) {
           const y = Math.random() * this.canvas.height;
           const x = this.canvas.width - 20;
           let randomX = Math.random() * (5 - -5) + -5;
-
           this.obstacles.push(new Obstacle(this.ctx, x, y, 1, randomX));
-          if (Math.random() > 0.97)
+          if (Math.random() > 0.9) {
+            let randomX = Math.random() * (5 - -5) + -5;
             this.obstacles.push(new RedBall(this.ctx, x, y, 1, randomX));
-          if (Math.random() > 0.5)
+          }
+          if (Math.random() > 0.9) {
+            let randomX = Math.random() * (5 - -5) + -5;
             this.obstacles.push(new Rock(this.ctx, x, y, 1, randomX));
-        }
-      } else if (this.score > 100) {
-        if (Math.random() > 0.93) {
-          const y = Math.random() * this.canvas.height;
-          const x = this.canvas.width - 20;
-          let randomX = Math.random() * (5 - -5) + -5;
-
-          this.obstacles.push(new Obstacle(this.ctx, x, y, 1, randomX));
-          if (Math.random() > 0.97)
-            this.obstacles.push(new RedBall(this.ctx, x, y, 1, randomX));
-          if (Math.random() > 0.5)
-            this.obstacles.push(new Rock(this.ctx, x, y, 1, randomX));
+          }
         }
       }
 
       // 1. UPDATE THE STATE OF PLAYER AND WE MOVE THE OBSTACLES
       //this.player.update();
-      this.obstacles.forEach((obstacle, index) => {
-        obstacle.move();
-        if (obstacle.y === 180) {
-          document.querySelector("#lives-span").innerHTML = this.lives;
-          this.lives -= 1;
-          this.obstacles.splice(index, 1);
-          if (this.lives === 0) this.gameIsOver = true;
-        }
-      });
 
       this.checkCollisions();
 
@@ -143,10 +120,22 @@ class Game {
       this.player.draw();
 
       // Draw the enemies
+      this.obstacles.forEach((obstacle, index) => {
+        obstacle.move();
+        if (obstacle.y <= 180) {
+          if (obstacle.type !== "Rock") this.lives -= 1;
+          this.obstacles.splice(index, 1);
+        }
+      });
 
       this.obstacles.forEach((obstacle) => {
         obstacle.draw();
       });
+
+      // UPDATE GAME STATS
+      document.querySelector("#lives-span").innerHTML = this.lives;
+      document.querySelector("#score-span").innerHTML = this.score;
+      if (this.lives <= 0) this.gameIsOver = true;
 
       // 4. TERMINATE LOOP IF GAME IS OVER
       if (!this.gameIsOver) {
@@ -168,24 +157,15 @@ class Game {
       if (this.player.didCollide(obstacle)) {
         if (obstacle.type === "ball") {
           this.score += 1;
-          document.querySelector("#score-span").innerHTML = this.score;
-          console.log(this.score);
           this.obstacles.splice(index, 1);
-          console.log(this.obstacles);
         }
         if (obstacle.type === "RedBall") {
           this.score += 10;
-          document.querySelector("#score-span").innerHTML = this.score;
-          console.log(this.score);
           this.obstacles.splice(index, 1);
-          console.log(this.obstacles);
         }
         if (obstacle.type === "Rock") {
           this.lives -= 1;
-          document.querySelector("#lives-span").innerHTML = this.lives;
-          console.log(this.score);
           this.obstacles.splice(index, 1);
-          console.log(this.obstacles);
         }
       }
     });

@@ -11,7 +11,7 @@ class Obstacle {
     this.size = 30;
     this.direction = direction;
     this.imageSrc = "/images/soccer.png";
-    this.type = "ball"
+    this.type = "ball";
   }
 
   draw() {
@@ -35,32 +35,31 @@ class RedBall extends Obstacle {
 
     this.imageSrc = "/images/redBall.png";
     this.size = 60;
-    this.type = "RedBall"
+    this.type = "RedBall";
   }
-  draw() {
-    this.ctx.fillStyle = this.color;
+  // draw() {
+  //   this.ctx.fillStyle = this.color;
 
-    const fireBall = new Image();
-    fireBall.src = this.imageSrc;
-    this.ctx.drawImage(fireBall, this.x, this.y, this.size, this.size);
-    this.x += this.direction;
-  }
+  //   const fireBall = new Image();
+  //   fireBall.src = this.imageSrc;
+  //   this.ctx.drawImage(fireBall, this.x, this.y, this.size, this.size);
+  //   this.x += this.direction;
+  // }
 }
 
-  class Rock extends Obstacle {
-    constructor(ctx, x, y, speed, direction) {
-      super(ctx, x, y, speed, direction);
-  
-      this.imageSrc = "/images/rock.png";
-      this.size = 30;
-      this.type="Rock"
-    }
-    draw() {
-      this.ctx.fillStyle = this.color;
-  
-      const rock = new Image();
-      rock.src = this.imageSrc;
-      this.ctx.drawImage(rock, this.x, this.y, this.size, this.size);
-      this.x += this.direction;
-    }
+class Rock extends Obstacle {
+  constructor(ctx, x, y, speed, direction) {
+    super(ctx, x, y, speed, direction);
+
+    this.imageSrc = "/images/rock.png";
+    this.size = 30;
+    this.type = "Rock";
+  }
+  // draw() {
+
+  //   const rock = new Image();
+  //   rock.src = this.imageSrc;
+  //   this.ctx.drawImage(rock, this.x, this.y, this.size, this.size);
+  //   this.x += this.direction;
+  // }
 }
