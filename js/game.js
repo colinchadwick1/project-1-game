@@ -66,9 +66,9 @@ class Game {
           const x = this.canvas.width - 20;
           let randomX = Math.random() * (5 - -5) + -5;
           this.obstacles.push(new Obstacle(this.ctx, x, y, 1, randomX));
-          if (Math.random() > 0.85)
+          if (Math.random() > 0.2)
             this.obstacles.push(new RedBall(this.ctx, x, y, 1, randomX));
-          if (Math.random() > 0.8)
+          if (Math.random() > 0.2)
             this.obstacles.push(new Rock(this.ctx, x, y, 1, randomX));
         }
       } else if (this.score >= 20 && this.score < 40) {
