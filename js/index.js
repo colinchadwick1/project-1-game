@@ -12,20 +12,24 @@ const buildSplashScreen = () => {
     <br />
     <img src="./images/champions.png" alt="champions-trophy" id="champions"/>
     <button id="start-button">Start Game</button>
-    <audio  autoplay>
+    <audio class ="background-music"  autoplay>
     <source src="cl.mp3" type="audio/mpeg">
   Your browser does not support the audio element.
   </audio>
     <div class = "rules">
-  <span class ="rules-text"><img class = "img-rules" src="./images/rock.png"/> = -1 lives</span>
-  <span class ="rules-text"><img class = "img-rules" src="./images/redBall.png"/> = +5 points</span>
-  <span class ="rules-text"><img  class = "img-rules"src="./images/one.png"/> = +1 life</span>
+    <div class = "rules-1">
+  <span class ="rules-text"><img class = "img-rules" src="./images/rock.png"/> <br><strong> -1 life</strong></span>
+  </div>
+  <span class ="rules-text"><img class = "img-rules" src="./images/redBall.png"/><br><strong> +5 points</strong></span>
+  <span class ="rules-text"><img  class = "img-rules"src="./images/one.png"/><br><strong>+1 life</strong></span>
+  </button>
     </div>
     </main>
     `);
   const startButton = document.getElementById("start-button");
 
   startButton.addEventListener("click", buildGameScreen);
+
 };
 
 // Second Screen => Game Screen
@@ -33,13 +37,13 @@ const buildGameScreen = () => {
   buildDom(`
   <header id="header">
   <h3 id="high-score-header: ">High score:  <span id="high-score">0</span></h3>
-    <h3 class="score">Saved: <span id="score-span">0</span></h3>
+    <h3 class="score">Score: <span id="score-span">0</span></h3>
     <h3> lives: <span id="lives-span">5</span></h3>
     </header>
     <div id="game-board">
     <canvas id="canvas" width="900" height="600" ></canvas>
     </div>  
-    <audio  autoplay>
+    <audio class ="background-music" autoplay>
   <source src="motd.mp3" type="audio/mpeg">
 Your browser does not support the audio element.
 </audio>

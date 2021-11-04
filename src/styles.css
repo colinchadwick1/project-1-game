@@ -10,6 +10,15 @@ body {
   font-family: "itc-novarese-std-2", sans-serif;
   width: 100vw;
   height: 100vh;
+  -webkit-animation: fadein 3s;
+}
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 #goalies {
   display: block;
@@ -172,11 +181,12 @@ body {
   background-color: rgb(178, 178, 178, 0.5);
   border-radius: 20px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-content: space-between;
   width: 50%;
   margin-left: auto;
   margin-right: auto;
+  padding: 10px;
 }
 .rules:hover {
   background-color: rgb(178, 178, 178, 0.6);
@@ -200,8 +210,11 @@ body {
   border-radius: 10px;
   padding: 10px;
   margin-top: 20px;
-
 }
 .rules-text {
   color: white;
+}
+.rules-1 {
+  display: flex;
+  flex-direction: column;
 }
