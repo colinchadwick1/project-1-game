@@ -3,7 +3,7 @@ body {
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  background-image: url("../images/cl.jpeg");
+  background-image: url("./images/cl.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
   color: black;
