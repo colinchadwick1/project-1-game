@@ -29,7 +29,6 @@ const buildSplashScreen = () => {
   const startButton = document.getElementById("start-button");
 
   startButton.addEventListener("click", buildGameScreen);
-
 };
 
 // Second Screen => Game Screen
@@ -65,7 +64,7 @@ const buildGameOver = (score) => {
   buildDom(`
   <section id="outer">
     <section class="game-over">
-    <img  id="game-over-text" src= "/images/GO1.png"/>
+    <img  id="game-over-text" src= "./images/GO1.png"/>
     <div id="scores">
     <h3 id="final-highscore" ">High score:  <span id="final-highscore">${myStorage.getItem(
       "score"
