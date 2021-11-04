@@ -12,6 +12,10 @@ const buildSplashScreen = () => {
     <br />
     <img src="./images/champions.png" alt="champions-trophy" id="champions"/>
     <button id="start-button">Start Game</button>
+    <audio  autoplay>
+    <source src="cl.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+  </audio>
     <div class = "rules">
   <span><img class = "img-rules" src="./images/rock.png"/> = -1 lives</span>
   <span><img class = "img-rules" src="./images/redBall.png"/> = +5 points</span>
