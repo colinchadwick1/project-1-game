@@ -10,7 +10,7 @@ const buildSplashScreen = () => {
   <img id="goalies" src="/images/goalieswhite.png"/>
     <img src="" alt="" style="width:50%;" />
     <br />
-    <img src="/images/champions.png" alt="champions-trophy" id="champions"/>
+    <img src="images/champions.png" alt="champions-trophy" id="champions"/>
     <button id="start-button">Start Game</button>
     <div class = "rules">
   <span><img class = "img-rules" src="/images/rock.png"/> = -1 lives</span>
