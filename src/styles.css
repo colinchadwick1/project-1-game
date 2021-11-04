@@ -61,9 +61,7 @@ body {
   transition: all 0.5s ease-in-out 0s;
   margin-bottom: 20px;
 }
-#champions:hover {
-  transform: rotate(360deg);
-}
+
 #ball-img {
   display: none;
 }
