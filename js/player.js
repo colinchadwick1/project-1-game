@@ -1,7 +1,7 @@
 "use strict";
 
 const gloves = new Image();
-gloves.src = "/images/gloves.png";
+gloves.src = "./images/gloves.png";
 
 class Player {
   constructor(canvas, lives) {

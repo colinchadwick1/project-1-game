@@ -10,7 +10,7 @@ class Obstacle {
     this.speed = speed;
     this.size = 30;
     this.direction = direction;
-    this.imageSrc = "/images/soccer.png";
+    this.imageSrc = "./images/soccer.png";
     this.type = "ball";
   }
 
@@ -33,7 +33,7 @@ class RedBall extends Obstacle {
   constructor(ctx, x, y, speed, direction) {
     super(ctx, x, y, speed, direction);
 
-    this.imageSrc = "/images/redBall.png";
+    this.imageSrc = "./images/redBall.png";
     this.size = 60;
     this.type = "RedBall";
   }
@@ -43,7 +43,7 @@ class Rock extends Obstacle {
   constructor(ctx, x, y, speed, direction) {
     super(ctx, x, y, speed, direction);
 
-    this.imageSrc = "/images/rock.png";
+    this.imageSrc = "./images/rock.png";
     this.size = 30;
     this.type = "Rock";
   }
@@ -52,7 +52,7 @@ class One extends Obstacle {
   constructor(ctx, x, y, speed, direction) {
     super(ctx, x, y, speed, direction);
 
-    this.imageSrc = "/images/one.png";
+    this.imageSrc = "./images/one.png";
     this.size = 30;
     this.type = "One";
   }
