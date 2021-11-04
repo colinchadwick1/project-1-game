@@ -7,10 +7,10 @@ const buildDom = (html) => {
 const buildSplashScreen = () => {
   buildDom(`
   <main class="main">
-  <img src="/images/GOALIES.png"/>
+  <img id="goalies" src="/images/goalieswhite.png"/>
     <img src="" alt="" style="width:50%;" />
     <br />
-    <img src="/images/start-ball.png" alt="world-cup-ball" id="start-ball"/>
+    <img src="/images/champions.png" alt="champions-trophy" id="champions"/>
     <button id="start-button">Start Game</button>
     <div class = "rules">
   <span><img class = "img-rules" src="/images/rock.png"/> = -1 lives</span>
@@ -58,8 +58,8 @@ const buildGameOver = (score) => {
   buildDom(`
   
     <section class="game-over">
-    <h1>Game Over</h1>
-    <h3>Score: <span id="final-score">0</span></h3>
+    <h1 class="end-text">Game Over</h1>
+    <h3 class="end-text">Score: <span id="final-score">0</span></h3>
     <button id = "game"> TRY AGAIN</button>
     <div class= "pointer"> </div>
     </section>

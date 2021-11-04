@@ -3,10 +3,18 @@ body {
   align-items: center;
   flex-direction: column;
   justify-content: center;
+  background-image: url("/images/cl.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
   color: black;
   font-family: "itc-novarese-std-2", sans-serif;
+}
+#goalies {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  margin-top: 50px;
 }
 .container {
   display: flex;
@@ -14,13 +22,14 @@ body {
   justify-content: center;
 }
 
-
-
-#start-ball {
-  width: 30%;
-  margin: 50px;
-  margin-left: 35%;
-  margin-top: -110px;
+#champions {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  max-height: 200px;
+  width: auto;
+  margin-top: -60px;
 }
 
 #ball-img {
@@ -37,7 +46,11 @@ body {
   border: none;
   transition: all 0.4s ease 0s;
   color: white;
-  margin-left: 40%;
+  
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }
 #start-button:hover {
   background: #434343;
@@ -91,8 +104,8 @@ body {
 #game-over {
   display: flex;
   flex-direction: column;
+  color: white;
 }
-
 
 #canvas {
   cursor: none;
@@ -105,8 +118,7 @@ body {
 #header {
   display: flex;
   justify-content: space-evenly;
-  color: white
-
+  color: white;
   height: 20px;
   z-index: 100;
 }
@@ -116,14 +128,22 @@ body {
   justify-content: space-between;
 }
 .rules {
-display: flex;
-flex-direction: column;
-justify-content: space-between;
-margin: 70px;
-align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 70px;
+  align-items: center;
 }
 .img-rules {
   width: 40px;
 }
-
-
+.end-text {
+  color: white;
+}
+.rules {
+  background-color: rgb(178, 178, 178, .8);
+  border-radius: 20px;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
