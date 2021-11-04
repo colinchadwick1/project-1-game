@@ -26,8 +26,8 @@ const buildSplashScreen = () => {
     </div>
     </main>
     `);
-  const startButton = document.getElementById("start-button");
 
+  const startButton = document.getElementById("start-button");
   startButton.addEventListener("click", buildGameScreen);
 };
 
