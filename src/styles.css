@@ -110,6 +110,8 @@ body {
   display: flex;
   flex-direction: column;
   color: white;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 #canvas {

@@ -58,7 +58,7 @@ const buildGameOver = (score) => {
   buildDom(`
   
     <section class="game-over">
-    <h1 class="end-text">Game Over</h1>
+    <img src = "/images/game-over1.png"/>
     <h3 class="end-text">Score: <span id="final-score">0</span></h3>
     <button id = "game"> TRY AGAIN</button>
     <div class= "pointer"> </div>
