@@ -7,15 +7,15 @@ const buildDom = (html) => {
 const buildSplashScreen = () => {
   buildDom(`
   <main class="main">
-  <img id="goalies" src="/images/goalieswhite.png"/>
+  <img id="goalies" src="./images/goalieswhite.png"/>
     <img src="" alt="" style="width:50%;" />
     <br />
-    <img src="images/champions.png" alt="champions-trophy" id="champions"/>
+    <img src="./images/champions.png" alt="champions-trophy" id="champions"/>
     <button id="start-button">Start Game</button>
     <div class = "rules">
-  <span><img class = "img-rules" src="/images/rock.png"/> = -1 lives</span>
-  <span><img class = "img-rules" src="/images/redBall.png"/> = +5 points</span>
-  <span><img  class = "img-rules"src="/images/one.png"/> = +1 life</span>
+  <span><img class = "img-rules" src="./images/rock.png"/> = -1 lives</span>
+  <span><img class = "img-rules" src="./images/redBall.png"/> = +5 points</span>
+  <span><img  class = "img-rules"src="./images/one.png"/> = +1 life</span>
     </div>
     </main>
     `);
