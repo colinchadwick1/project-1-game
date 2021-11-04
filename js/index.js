@@ -21,9 +21,7 @@ const buildSplashScreen = () => {
     `);
   const startButton = document.getElementById("start-button");
 
-  const startImage = document.getElementById("start-ball");
   startButton.addEventListener("click", buildGameScreen);
-  startImage.addEventListener("click", buildGameScreen);
 };
 
 // Second Screen => Game Screen
@@ -37,15 +35,12 @@ const buildGameScreen = () => {
     <div id="game-board">
     <canvas id="canvas" width="900" height="600" ></canvas>
     </div>  
-    <button id="end-button">End Game</button>
     <audio  autoplay>
   <source src="motd.mp3" type="audio/mpeg">
 Your browser does not support the audio element.
 </audio>
     `);
 
-  const endButton = document.getElementById("end-button");
-  endButton.addEventListener("click", buildGameOver);
   document.querySelector("#high-score").innerHTML = highScore;
 
   const game = new Game();
@@ -55,13 +50,13 @@ Your browser does not support the audio element.
 
 // Third Screen => Game Over
 const buildGameOver = (score) => {
+  console.log("score", score);
   buildDom(`
   
     <section class="game-over">
-    <img src = "/images/game-over1.png"/>
-    <h3 class="end-text">Score: <span id="final-score">0</span></h3>
+    <img  id="game-over-text" src= "/images/GO1.png"/>
+    <h3 class="end-text">Score: <span id="final-score">${score}</span></h3>
     <button id = "game"> TRY AGAIN</button>
-    <div class= "pointer"> </div>
     </section>
     `);
 

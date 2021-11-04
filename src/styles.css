@@ -8,6 +8,8 @@ body {
   background-size: cover;
   color: black;
   font-family: "itc-novarese-std-2", sans-serif;
+  width: 100vw;
+  height: 100vh;
 }
 #goalies {
   display: block;
@@ -34,8 +36,6 @@ body {
 }
 #champions:hover {
   transform: rotate(360deg);
-
-  
 }
 #ball-img {
   display: none;
@@ -162,4 +162,8 @@ body {
 }
 #canvas {
   background-image: url("../images/goal.jpeg");
+}
+#game-over-text {
+  height: 200px;
+  width: auto;
 }
