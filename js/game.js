@@ -1,6 +1,5 @@
-let highScore = 0;
-
-("use strict");
+"use strict";
+let myStorage = window.localStorage;
 class Game {
   constructor() {
     this.canvas = null;
@@ -154,8 +153,8 @@ class Game {
       if (!this.gameIsOver) {
         window.requestAnimationFrame(loop);
       } else {
-        buildGameOver(this.score);
         this.updateHighScore();
+        buildGameOver(this.score);
       }
     };
 
@@ -188,6 +187,7 @@ class Game {
     });
   }
   updateHighScore() {
-    if (this.score > highScore) highScore = this.score;
+    const highScore = myStorage.getItem("score");
+    if (this.score > highScore) myStorage.setItem("score", String(this.score));
   }
 }

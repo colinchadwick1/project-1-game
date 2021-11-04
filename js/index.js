@@ -17,9 +17,9 @@ const buildSplashScreen = () => {
   Your browser does not support the audio element.
   </audio>
     <div class = "rules">
-  <span><img class = "img-rules" src="./images/rock.png"/> = -1 lives</span>
-  <span><img class = "img-rules" src="./images/redBall.png"/> = +5 points</span>
-  <span><img  class = "img-rules"src="./images/one.png"/> = +1 life</span>
+  <span class ="rules-text"><img class = "img-rules" src="./images/rock.png"/> = -1 lives</span>
+  <span class ="rules-text"><img class = "img-rules" src="./images/redBall.png"/> = +5 points</span>
+  <span class ="rules-text"><img  class = "img-rules"src="./images/one.png"/> = +1 life</span>
     </div>
     </main>
     `);
@@ -44,8 +44,12 @@ const buildGameScreen = () => {
 Your browser does not support the audio element.
 </audio>
     `);
-
-  document.querySelector("#high-score").innerHTML = highScore;
+  if (myStorage.getItem("score") === null) {
+    myStorage.setItem("score", "0");
+  } else {
+    document.querySelector("#high-score").innerHTML =
+      myStorage.getItem("score");
+  }
 
   const game = new Game();
 
@@ -54,19 +58,25 @@ Your browser does not support the audio element.
 
 // Third Screen => Game Over
 const buildGameOver = (score) => {
-  console.log("score", score);
   buildDom(`
-  
+  <section id="outer">
     <section class="game-over">
     <img  id="game-over-text" src= "/images/GO1.png"/>
+    <div id="scores">
+    <h3 id="final-highscore" ">High score:  <span id="final-highscore">${myStorage.getItem(
+      "score"
+    )}</span></h3>
     <h3 class="end-text">Score: <span id="final-score">${score}</span></h3>
     <button id = "game"> TRY AGAIN</button>
+    </div>
+
+
+    </section>
     </section>
     `);
 
   const restartButton = document.querySelector("button");
   restartButton.addEventListener("click", buildGameScreen);
-  let finalScore = (document.querySelector("#final-score").innerHTML = score);
 };
 
 // When the window loads, then we will run the "buildSplashScreen" function
