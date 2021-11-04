@@ -35,7 +35,7 @@ const buildGameScreen = () => {
     <h3> lives: <span id="lives-span">5</span></h3>
     </header>
     <div id="game-board">
-    <canvas id="canvas" width="900" height="600" style="background: url('./images/goal.jpeg')"></canvas>
+    <canvas id="canvas" width="900" height="600" ></canvas>
     </div>  
     <button id="end-button">End Game</button>
     <audio  autoplay>
