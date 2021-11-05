@@ -219,8 +219,7 @@ body {
 }
 
 #fire-nail {
-  height: 60px;
-  width: fit-content;
+  min-width: 90px;
 }
 #intro {
   color: white;
