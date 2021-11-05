@@ -7,6 +7,7 @@ const buildDom = (html) => {
 const buildSplashScreen = () => {
   buildDom(`
   <main class="main">
+  
   <img id="goalies" src="./images/goalieswhite.png"/>
     <img src="" alt="" style="width:50%;" />
     <br />
@@ -19,10 +20,6 @@ const buildSplashScreen = () => {
     <span> Avoid the rocks!</span>
     </div>
 
-    <audio autoplay>
-    <source src="cl.mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
-  </audio>
     <div class = "rules">
     <div class = "rules-1">
 
@@ -34,6 +31,10 @@ const buildSplashScreen = () => {
 
 
     </div>
+    <audio autoplay>
+    <source src="motd.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+  </audio>
 
     </main>
     `);
@@ -95,4 +96,6 @@ const buildGameOver = (score) => {
 
 // When the window loads, then we will run the "buildSplashScreen" function
 // "load" waits for the html and JS
-window.addEventListener("load", buildSplashScreen);
+window.addEventListener("load", () => {
+  buildSplashScreen();
+});
