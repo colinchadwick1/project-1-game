@@ -216,3 +216,11 @@ body {
   display: flex;
   flex-direction: column;
 }
+
+#fire-nail{
+  height: 50px;;
+  width: auto;
+}
+#intro{
+  color: white;
+}
