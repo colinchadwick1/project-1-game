@@ -12,6 +12,12 @@ const buildSplashScreen = () => {
     <br />
     <img src="./images/champions.png" alt="champions-trophy" id="champions"/>
     <button id="start-button">Start Game</button>
+    <div class="instructions">
+    <span>Save as many balls as you can</span>
+    
+    <span>Failure to save a ball will lose you a life</span>
+    <span> Avoid the rocks!</span>
+    </div>
 
     <audio autoplay>
     <source src="cl.mp3" type="audio/mpeg">
