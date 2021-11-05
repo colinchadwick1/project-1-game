@@ -13,7 +13,7 @@ const buildSplashScreen = () => {
     <img src="./images/champions.png" alt="champions-trophy" id="champions"/>
     <button id="start-button">Start Game</button>
 
-    <audio class ="background-music"  autoplay>
+    <audio  autoplay>
     <source src="cl.mp3" type="audio/mpeg">
   Your browser does not support the audio element.
   </audio>
