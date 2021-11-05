@@ -1,5 +1,6 @@
 "use strict";
 let myStorage = window.localStorage;
+
 class Game {
   constructor() {
     this.canvas = null;

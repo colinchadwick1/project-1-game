@@ -13,7 +13,7 @@ const buildSplashScreen = () => {
     <img src="./images/champions.png" alt="champions-trophy" id="champions"/>
     <button id="start-button">Start Game</button>
 
-    <audio  autoplay>
+    <audio autoplay>
     <source src="cl.mp3" type="audio/mpeg">
   Your browser does not support the audio element.
   </audio>
@@ -24,7 +24,7 @@ const buildSplashScreen = () => {
   </div>
   <span class ="rules-text"><img class = "img-rules" src="./images/redBall.png" id="fire-nail"/><br><strong> +5 points</strong></span>
   <span class ="rules-text"><img  class = "img-rules"src="./images/soccer.png"/><br><strong>+1 point</strong></span>
-  <span class ="rules-text"><img  class = "img-rules"src="./images/one.png"/><br><strong>+1 life</strong></span>
+  <span class ="rules-text"><img  class = "img-rules"src="./images/one.png" id="easter"/><br><strong>+1 life</strong></span>
 
 
     </div>
