@@ -26,8 +26,9 @@ const buildSplashScreen = () => {
   <span class ="rules-text"><img  class = "img-rules"src="./images/soccer.png"/><br><strong>+1 point</strong></span>
   <span class ="rules-text"><img  class = "img-rules"src="./images/one.png"/><br><strong>+1 life</strong></span>
 
-  </button>
+
     </div>
+
     </main>
     `);
 
